@@ -83,7 +83,7 @@ namespace Littlefish.SQLiteSessionStateProvider
             schemagenerator.Create();
 
             //Setup cleanup timer to remove old session data
-            _cleanupTimer = new Timer(_config.Timeout.Milliseconds);
+            _cleanupTimer = new Timer(_config.Timeout.TotalMilliseconds);
             _cleanupTimer.Elapsed += (sender,e) => CleanUpExpiredData();
 
             // Initialize WriteExceptionsToEventLog
