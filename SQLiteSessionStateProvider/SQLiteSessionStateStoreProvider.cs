@@ -12,6 +12,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.IO;
 using System.Diagnostics;
+using System.Timers;
 
 namespace Littlefish.SQLiteSessionStateProvider
 {
@@ -23,6 +24,7 @@ namespace Littlefish.SQLiteSessionStateProvider
         private string _eventSource = "SQLiteSessionStateStore";
         private string _eventLog = "Application";
         private string _exceptionMessage = "An exception occurred. Please contact your administrator.";
+        private Timer _cleanupTimer;
 
         /// <summary>
         /// If false, exceptions are thrown to the caller. If true,
@@ -79,6 +81,10 @@ namespace Littlefish.SQLiteSessionStateProvider
 
             var schemagenerator = new SchemaGenerator(databaseFile);
             schemagenerator.Create();
+
+            //Setup cleanup timer to remove old session data
+            _cleanupTimer = new Timer(_config.Timeout.Milliseconds);
+            _cleanupTimer.Elapsed += (sender,e) => CleanUpExpiredData();
 
             // Initialize WriteExceptionsToEventLog
             var writeExceptionsToEventLog = config["writeExceptionsToEventLog"];
@@ -554,5 +560,18 @@ namespace Littlefish.SQLiteSessionStateProvider
             log.WriteEntry(message);
         }
 
+        /// <summary>
+        /// Remove expired session data.
+        /// </summary>
+        private void CleanUpExpiredData()
+        {
+            IDbConnection conn = new SQLiteConnection(_connectionString);
+            IDbCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "DELETE FROM Sessions WHERE Expires < @Expires";
+            cmd.Parameters.Add(SQLiteHelper.CreateParameter("@Expires", DbType.DateTime, DateTime.Now));
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

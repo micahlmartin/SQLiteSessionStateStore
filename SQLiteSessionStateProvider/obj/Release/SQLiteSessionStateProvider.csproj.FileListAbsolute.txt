@@ -1,9 +1,0 @@
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\bin\Release\Littlefish.SQLiteSessionStateProvider.dll.config
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\bin\Release\Littlefish.SQLiteSessionStateProvider.dll
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\bin\Release\Littlefish.SQLiteSessionStateProvider.pdb
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\obj\Release\ResolveAssemblyReference.cache
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\obj\Release\Littlefish.SQLiteSessionStateProvider.Properties.Resources.resources
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\obj\Release\GenerateResource.read.1.tlog
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\obj\Release\GenerateResource.write.1.tlog
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\obj\Release\Littlefish.SQLiteSessionStateProvider.dll
-C:\Users\Micah\Documents\Visual Studio 2010\Projects\Littlefish.SqliteSessionStateProvider\Littlefish.SqliteSessionStateProvider\obj\Release\Littlefish.SQLiteSessionStateProvider.pdb
